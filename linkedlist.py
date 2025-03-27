@@ -8,20 +8,10 @@ class LinkedList:
     def get_head_node(self):
         return self.head
 
-    def append(self, value):
+    def insert(self, value):
         new_node = Node(value)
-        if not self.head:
-            self.head = new_node  # if list is empty new Node becomes the head
-        else:
-            last_node = self.head
-            while last_node.next:  # if not last node points to the new one as next
-                last_node = last_node.next
-            last_node.next = new_node 
-
-    def prepend(self, value):
-        new_node = Node(value)
-        new_node.set_next_node(self.head)  # new Node points to the current head
-        self.head = new_node  # head is now the new node
+        new_node.set_next_node(self.head)
+        self.head = new_node
 
     def delete(self, value):
         current = self.head
