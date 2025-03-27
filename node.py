@@ -4,10 +4,10 @@ class Node:
         self.next = next_node
 
     def set_next_node(self, next_node):
-        self.next_node = next_node
+        self.next = next_node
 
     def get_next_node(self):
-        return self.next_node
+        return self.next
 
     def get_value(self):
         return self.value    
