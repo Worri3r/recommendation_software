@@ -1,6 +1,12 @@
+from node import *
+
+
 class LinkedList:
-    def __init__(self):
-        self.head = None  # Die Liste beginnt mit keinem Element (head ist None)
+    def __init__(self, value = None):
+        self.head = Node(value)  # Die Liste beginnt mit keinem Element (head ist None)
+
+    def get_head_node(self):
+        return self.head
 
     def append(self, value):
         """Fügt einen neuen Knoten am Ende der Liste hinzu."""
@@ -16,7 +22,7 @@ class LinkedList:
     def prepend(self, value):
         """Fügt einen neuen Knoten am Anfang der Liste hinzu."""
         new_node = Node(value)
-        new_node.next = self.head  # Der neue Knoten zeigt auf das bisherige erste Element
+        new_node.set_next_node(self.head)  # Der neue Knoten zeigt auf das bisherige erste Element
         self.head = new_node  # Der Kopf der Liste zeigt jetzt auf den neuen Knoten
 
     def delete(self, value):
